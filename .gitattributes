@@ -1,0 +1,16 @@
+*.onnx filter=lfs diff=lfs merge=lfs -text
+*.safetensors filter=lfs diff=lfs merge=lfs -text
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.pth filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+*.apk filter=lfs diff=lfs merge=lfs -text
+*.mp4 filter=lfs diff=lfs merge=lfs -text
+*.webm filter=lfs diff=lfs merge=lfs -text
+model_and_results/whisper-tamil-int8/decoder.onnx filter=lfs diff=lfs merge=lfs -text
+model_and_results/huggingface_checkpoint/model.safetensors filter=lfs diff=lfs merge=lfs -text
+model_and_results/onnx_exports/tiny-decoder.onnx filter=lfs diff=lfs merge=lfs -text
+model_and_results/onnx_exports/tiny-decoder.int8.onnx filter=lfs diff=lfs merge=lfs -text
+model_and_results/sherpa_onnx/tiny-decoder.onnx filter=lfs diff=lfs merge=lfs -text
+model_and_results/sherpa_onnx/tiny-decoder.int8.onnx filter=lfs diff=lfs merge=lfs -text
+model_and_results/sherpa_onnx/finetuned-openai.pt filter=lfs diff=lfs merge=lfs -text
+model_and_results/finetuned/model.safetensors filter=lfs diff=lfs merge=lfs -text

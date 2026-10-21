@@ -1,0 +1,12 @@
+
+.env
+.env.*
+*.jks
+*.keystore
+*.pem
+*.key
+local.properties
+__pycache__/
+.ipynb_checkpoints/
+.gradle/
+**/build/

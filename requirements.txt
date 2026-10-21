@@ -1,0 +1,18 @@
+# Unpinned dependencies derived from the notebook.
+torch
+numpy
+pandas
+datasets
+transformers
+accelerate
+evaluate
+jiwer
+soundfile
+librosa
+tqdm
+optimum[onnxruntime]
+onnx
+onnxruntime
+openai-whisper
+sherpa-onnx
+ipython

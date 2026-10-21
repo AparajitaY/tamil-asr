@@ -1,79 +1,50 @@
 # Tamil Automatic Speech Recognition
 
-A Tamil automatic speech recognition (ASR) project using OpenAI Whisper-tiny. It explores fine-tuning on Common Voice Tamil, evaluation on the Tamil FLEURS dataset, and ONNX export for potential Android deployment.
+Tamil ASR experiments using OpenAI Whisper-tiny, Common Voice Tamil
+fine-tuning, FLEURS evaluation, and ONNX export for Android deployment.
 
-## Overview
+## Project Structure
 
-The project covers:
-- Baseline Tamil transcription using pretrained Whisper-tiny.
-- Fine-tuning with a Common Voice Tamil subset.
-- Comparison of baseline and fine-tuned transcription results.
-- Export and evaluation of FP32 and INT8 models using sherpa-onnx.
-- Organization of Android source, APK, and demonstration assets.
+- `android_source/` — Android application source, when supplied.
+- `apk/` — Android application package, when supplied.
+- `demo/` — Demonstration media and sample assets.
+- `model_and_results/` — Model artifacts, configurations, and results.
+- `tamilASR.ipynb` — Training, evaluation, and export notebook.
+- `requirements.txt` — Notebook-derived Python dependencies.
 
-## Repository Structure
+## Approach
 
-```text
-android_source/       # Android application source
-apk/                  # Compiled Android application
-demo/                 # Screenshots and demo recordings
-model_and_results/    # Model artifacts and evaluation results
-README.md             # Project documentation
-requirements.txt      # Python dependencies
-tamilASR.ipynb         # Training, evaluation, and export notebook
-```
+1. Evaluate pretrained Whisper-tiny on Tamil speech.
+2. Fine-tune with a Common Voice Tamil subset.
+3. Compare baseline and fine-tuned results on Tamil FLEURS.
+4. Export FP32 and INT8 ONNX models using sherpa-onnx.
+5. Examine transcription accuracy, model size, and decoding speed.
 
-## Model and Dataset
+The notebook configures 1,000 training examples, 100 validation examples,
+and evaluation on the first 200 FLEURS test examples.
 
-| Component | Details |
-|-----------|---------|
-| Base model | OpenAI Whisper-tiny |
-| Language | Tamil |
-| Fine-tuning data | Common Voice Tamil subset |
-| Configured training subset | 1,000 examples |
-| Configured validation subset | 100 examples |
-| Evaluation data | First 200 Tamil FLEURS test examples |
-| Export formats | FP32 and INT8 ONNX |
-
-## Getting Started
-
-Install the Python dependencies:
+## Setup
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Open `tamilASR.ipynb` in Google Colab and enable a GPU runtime for fine-tuning.
-
-Before running:
-1. Provide `common_voice_tamil_subset.zip` in Google Drive.
-2. Ensure the extracted dataset contains `ta/train.tsv`, `ta/dev.tsv`, and `ta/clips/`.
-3. Update the dataset, checkpoint, and output paths as needed.
-
-Some notebook cells depend on previously generated feature caches or saved checkpoints and may need adjustment for a fresh run.
+Open `tamilASR.ipynb` in Google Colab with a GPU runtime. Supply the
+Common Voice Tamil subset and update Drive, dataset, and checkpoint paths.
+Some cells require previously generated caches or checkpoints.
 
 ## Evaluation
 
-The notebook measures:
-- Word Error Rate (WER).
-- Character Error Rate (CER).
-- Exported model size.
-- Decoding time and real-time factor (RTF).
+Metrics include Word Error Rate (WER), Character Error Rate (CER),
+model size, decoding time, and real-time factor (RTF).
+Saved results are experiment outputs and have not been independently rerun.
 
-Baseline and fine-tuned models are evaluated on the same selected FLEURS examples. Exported FP32 and INT8 models are also evaluated to examine accuracy, size, and runtime trade-offs.
+## Artifacts
 
-## Android Deployment
-
-The repository reserves directories for Android source code, a compiled APK, and demonstration media. Android build and installation instructions will be added when those artifacts are available.
-
-## Project Status
-
-The experiment notebook is available for repository upload. Android source, APK, demo assets, and standalone model files are pending upload.
+Only supplied files are included. Directories containing only `.gitkeep`
+are placeholders. Large binary artifacts use Git LFS.
 
 ## Acknowledgements
 
-- OpenAI Whisper
-- Hugging Face Transformers and Datasets
-- Common Voice Tamil
-- Google FLEURS
-- sherpa-onnx
+OpenAI Whisper, Hugging Face, Common Voice, Google FLEURS, and sherpa-onnx.
+Third-party model and dataset terms apply.

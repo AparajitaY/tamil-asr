@@ -1,0 +1,16 @@
+{
+  "source_checkpoint": "/content/drive/MyDrive/tamil_whisper_experiment/finetuned",
+  "architecture": "multilingual-whisper-tiny",
+  "language": "ta",
+  "task": "transcribe",
+  "sherpa_source_commit": "a63f82130d91d99a23a43f346104706881b31ff1",
+  "quantization": "dynamic QInt8 MatMul weights",
+  "versions": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.20.1",
+    "openai-whisper": "20250625",
+    "onnx": "1.23.2",
+    "onnxruntime": "1.31.0",
+    "sherpa-onnx": "1.13.8"
+  }
+}
