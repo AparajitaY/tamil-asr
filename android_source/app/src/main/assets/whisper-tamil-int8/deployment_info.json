@@ -1,0 +1,10 @@
+{
+  "architecture": "multilingual-whisper-tiny",
+  "precision": "dynamic-int8",
+  "language": "ta",
+  "task": "transcribe",
+  "evaluation_samples": 200,
+  "wer_percent": 96.295,
+  "cer_percent": 63.427,
+  "status": "Android deployment candidate; not phone-validated"
+}

@@ -1,4 +1,4 @@
-# Unpinned dependencies derived from the notebook.
+# Notebook-derived dependencies; versions are not pinned.
 torch
 numpy
 pandas
